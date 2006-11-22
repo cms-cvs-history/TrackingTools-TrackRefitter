@@ -1,0 +1,12 @@
+<use name=FWCore/Framework>
+<use name=FWCore/Utilities>
+<use name=FWCore/ParameterSet>
+
+<use name=TrackingTools/TransientTrack>
+
+<use name=CLHEP>
+<use name=root>
+
+<library file="TrajectoryReader.cc" name=TrajectoryReader>
+  <flags SEAL_PLUGIN_NAME="TrajectoryReader"> 
+</library> 
