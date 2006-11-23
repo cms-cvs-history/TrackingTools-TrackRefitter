@@ -1,0 +1,15 @@
+include "TrackingTools/TrackRefitter/data/TracksToTrajectories.cff"
+
+module globalMuons = TracksToTrajectories {
+    
+    InputTag Tracks = globalMuons
+
+    PSet TrackTransformer = {
+	string Fitter = "KFFitterForRefit"
+	string Smoother = "KFSmootherForRefit"
+	string TrackerRecHitBuilder = "WithTrackAngle"
+	string MuonRecHitBuilder = "MuonRecHitBuilder"
+	
+	# string Propagator = "SmartPropagatorOpposite"
+    }
+}

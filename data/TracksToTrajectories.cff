@@ -1,0 +1,37 @@
+include "TrackingTools/KalmanUpdators/data/KFUpdatorESProducer.cfi"
+
+include "RecoMuon/TransientTrackingRecHit/data/MuonTransientTrackingRecHitBuilder.cfi"
+include "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilder.cfi"
+
+include "RecoLocalTracker/SiStripRecHitConverter/data/StripCPEfromTrackAngle.cfi"
+include "RecoLocalTracker/SiPixelRecHits/data/PixelCPEParmError.cfi"
+
+include "TrackingTools/GeomPropagators/data/SmartPropagator.cfi"
+
+es_module = Chi2MeasurementEstimatorESProducer
+{
+  string ComponentName = "Chi2EstimatorForRefit"
+  double MaxChi2 = 100000.
+  double nSigma = 3.
+}
+
+es_module = KFTrajectoryFitterESProducer
+{
+    string ComponentName = "KFFitterForRefit"
+    
+    string Propagator = "SmartPropagatorAnyOpposite"
+    string Updator = "KFUpdator"
+    string Estimator = "Chi2EstimatorForRefit"
+}
+
+es_module = KFTrajectorySmootherESProducer
+{
+    string ComponentName = "KFSmootherForRefit"
+    
+    string Propagator = "SmartPropagator"
+    string Updator = "KFUpdator"
+    string Estimator = "Chi2EstimatorForRefit"
+}
+
+
+

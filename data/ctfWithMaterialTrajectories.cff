@@ -1,0 +1,15 @@
+include "TrackingTools/TrackRefitter/data/TracksToTrajectories.cff"
+
+module ctfWithMaterialTracks = TracksToTrajectories {
+    
+    InputTag Tracks = ctfWithMaterialTracks
+    
+    PSet TrackTransformer = {
+	string Fitter = "KFFitterForRefit"
+	string Smoother = "KFSmootherForRefit"
+	string TrackerRecHitBuilder = "WithTrackAngle"
+	string MuonRecHitBuilder = "MuonRecHitBuilder"
+	
+	# string Propagator = "SmartPropagatorAnyOpposite"
+    }
+}
