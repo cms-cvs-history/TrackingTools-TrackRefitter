@@ -9,7 +9,7 @@ module standAloneMuons = TracksToTrajectories {
 	string Smoother = "KFSmootherForRefit"
 	string TrackerRecHitBuilder = "WithTrackAngle"
 	string MuonRecHitBuilder = "MuonRecHitBuilder"
-	
-	# string Propagator = "SmartPropagatorAnyOpposite"
+
+	string RefitDirection = insideOut
     }
 }

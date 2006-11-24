@@ -10,6 +10,6 @@ module ctfWithMaterialTracks = TracksToTrajectories {
 	string TrackerRecHitBuilder = "WithTrackAngle"
 	string MuonRecHitBuilder = "MuonRecHitBuilder"
 	
-	# string Propagator = "SmartPropagatorAnyOpposite"
+	string RefitDirection = insideOut
     }
 }
