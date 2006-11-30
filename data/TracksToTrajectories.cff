@@ -8,27 +8,49 @@ include "RecoLocalTracker/SiPixelRecHits/data/PixelCPEParmError.cfi"
 
 include "TrackingTools/GeomPropagators/data/SmartPropagator.cfi"
 
-es_module = Chi2MeasurementEstimatorESProducer
+es_module Chi2EstimatorForRefit = Chi2MeasurementEstimatorESProducer
 {
   string ComponentName = "Chi2EstimatorForRefit"
   double MaxChi2 = 100000.
   double nSigma = 3.
 }
 
-es_module = KFTrajectoryFitterESProducer
+
+
+es_module KFFitterForRefitOutsideIn = KFTrajectoryFitterESProducer
 {
-    string ComponentName = "KFFitterForRefit"
+    string ComponentName = "KFFitterForRefitOutsideIn"
     
     string Propagator = "SmartPropagatorAnyOpposite"
     string Updator = "KFUpdator"
     string Estimator = "Chi2EstimatorForRefit"
-}
+  }
 
-es_module = KFTrajectorySmootherESProducer
-{
-    string ComponentName = "KFSmootherForRefit"
+es_module KFSmootherForRefitOutsideIn = KFTrajectorySmootherESProducer
+  {
+    string ComponentName = "KFSmootherForRefitOutsideIn"
     
     string Propagator = "SmartPropagator"
+    string Updator = "KFUpdator"
+    string Estimator = "Chi2EstimatorForRefit"
+}
+
+############################################################
+
+es_module KFFitterForRefitInsideOut = KFTrajectoryFitterESProducer
+{
+    string ComponentName = "KFFitterForRefitInsideOut"
+    
+    string Propagator = "SmartPropagatorAny"
+    string Updator = "KFUpdator"
+    string Estimator = "Chi2EstimatorForRefit"
+}
+
+es_module KFSmootherForRefitInsideOut = KFTrajectorySmootherESProducer
+{
+    string ComponentName = "KFSmootherForRefitInsideOut"
+    
+    string Propagator = "SmartPropagatorOpposite"
     string Updator = "KFUpdator"
     string Estimator = "Chi2EstimatorForRefit"
 }

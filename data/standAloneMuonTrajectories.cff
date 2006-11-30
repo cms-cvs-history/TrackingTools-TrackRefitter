@@ -1,12 +1,28 @@
 include "TrackingTools/TrackRefitter/data/TracksToTrajectories.cff"
 
+### IMPORTANT !!! ##
+
+# If you want to revert the fit direction, i.e. put  RefitDirection = "insideOut", then
+# you have to change TracksToTrajectories_insideOut.cff to TracksToTrajectories_outsideIn.cff
+
+# string RefitDirection = "insideOut"
+# KFTrajectoryFitterESProducer   ---> Propagator = "SmartPropagatorAny"
+# KFTrajectorySmootherESProducer ---> Propagator = "SmartPropagatorOpposite"
+
+# string RefitDirection = "outsideIn"
+# KFTrajectoryFitterESProducer   ---> Propagator = "SmartPropagatorAnyOpposite"
+# KFTrajectorySmootherESProducer ---> Propagator = "SmartPropagator"
+
+###
+
+
 module standAloneMuons = TracksToTrajectories {
     
     InputTag Tracks = standAloneMuons
     
     PSet TrackTransformer = {
-	string Fitter = "KFFitterForRefit"
-	string Smoother = "KFSmootherForRefit"
+	string Fitter = "KFFitterForRefitOutsideIn"
+	string Smoother = "KFSmootherForRefitOutsideIn"
 	string TrackerRecHitBuilder = "WithTrackAngle"
 	string MuonRecHitBuilder = "MuonRecHitBuilder"
 
