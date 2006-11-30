@@ -10,6 +10,6 @@ module standAloneMuons = TracksToTrajectories {
 	string TrackerRecHitBuilder = "WithTrackAngle"
 	string MuonRecHitBuilder = "MuonRecHitBuilder"
 
-	string RefitDirection = "insideOut"
+	string RefitDirection = "outsideIn"
     }
 }
