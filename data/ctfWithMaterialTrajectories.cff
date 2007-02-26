@@ -2,16 +2,17 @@ include "TrackingTools/TrackRefitter/data/TracksToTrajectories.cff"
 
 ### IMPORTANT !!! ##
 
-# If you want to revert the fit direction, i.e. put  RefitDirection = "insideOut", then
-# you have to change TracksToTrajectories_insideOut.cff to TracksToTrajectories_outsideIn.cff
+# If you want to revert the fit direction, then
 
+# Case 1 #
 # string RefitDirection = "insideOut"
-# KFTrajectoryFitterESProducer   ---> Propagator = "SmartPropagatorAny"
-# KFTrajectorySmootherESProducer ---> Propagator = "SmartPropagatorOpposite"
+# KFTrajectoryFitterESProducer   ---> Fitter = "KFFitterForRefitInsideOut"
+# KFTrajectorySmootherESProducer ---> Smoother = "KFSmootherForRefitInsideOut"
 
+# Case 2 #
 # string RefitDirection = "outsideIn"
-# KFTrajectoryFitterESProducer   ---> Propagator = "SmartPropagatorAnyOpposite"
-# KFTrajectorySmootherESProducer ---> Propagator = "SmartPropagator"
+# KFTrajectoryFitterESProducer   ---> Fitter = "KFFitterForRefitOutsideIn"
+# KFTrajectorySmootherESProducer ---> Smoother = "KFSmootherForRefitOutsideIn"
 
 ###
 
