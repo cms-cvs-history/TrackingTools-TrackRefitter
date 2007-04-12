@@ -8,5 +8,5 @@
 <use name=root>
 
 <library file="TrajectoryReader.cc" name=TrajectoryReader>
-  <flags SEAL_PLUGIN_NAME="TrajectoryReader"> 
+  <flags EDM_PLUGIN=1> 
 </library> 
