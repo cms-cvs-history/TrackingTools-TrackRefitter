@@ -6,7 +6,7 @@ include "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilder
 include "RecoLocalTracker/SiStripRecHitConverter/data/StripCPEfromTrackAngle.cfi"
 include "RecoLocalTracker/SiPixelRecHits/data/PixelCPEParmError.cfi"
 
-include "TrackingTools/GeomPropagators/data/SmartPropagator.cfi"
+include "TrackingTools/GeomPropagators/data/SmartPropagator.cff"
 
 es_module Chi2EstimatorForRefit = Chi2MeasurementEstimatorESProducer
 {
