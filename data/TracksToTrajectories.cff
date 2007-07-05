@@ -33,6 +33,8 @@ es_module KFSmootherForRefitOutsideIn = KFTrajectorySmootherESProducer
     string Propagator = "SmartPropagator"
     string Updator = "KFUpdator"
     string Estimator = "Chi2EstimatorForRefit"
+
+    double errorRescaling = 100.
 }
 
 ############################################################
@@ -53,6 +55,8 @@ es_module KFSmootherForRefitInsideOut = KFTrajectorySmootherESProducer
     string Propagator = "SmartPropagatorOpposite"
     string Updator = "KFUpdator"
     string Estimator = "Chi2EstimatorForRefit"
+
+    double errorRescaling = 100.
 }
 
 
