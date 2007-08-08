@@ -5,6 +5,7 @@ include "RecoTracker/TransientTrackingRecHit/data/TransientTrackingRecHitBuilder
 
 include "RecoLocalTracker/SiStripRecHitConverter/data/StripCPEfromTrackAngle.cfi"
 include "RecoLocalTracker/SiPixelRecHits/data/PixelCPEParmError.cfi"
+include "RecoLocalTracker/SiStripRecHitConverter/data/SiStripRecHitMatcher.cfi"
 
 include "TrackingTools/GeomPropagators/data/SmartPropagator.cff"
 
@@ -52,7 +53,7 @@ es_module KFSmootherForRefitInsideOut = KFTrajectorySmootherESProducer
 {
     string ComponentName = "KFSmootherForRefitInsideOut"
     
-    string Propagator = "SmartPropagatorOpposite"
+    string Propagator = "SmartPropagatorAnyOpposite"
     string Updator = "KFUpdator"
     string Estimator = "Chi2EstimatorForRefit"
 
