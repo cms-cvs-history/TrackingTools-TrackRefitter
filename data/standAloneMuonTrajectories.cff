@@ -14,8 +14,9 @@ include "TrackingTools/TrackRefitter/data/TracksToTrajectories.cff"
 # KFTrajectoryFitterESProducer   ---> Fitter = "KFFitterForRefitOutsideIn"
 # KFTrajectorySmootherESProducer ---> Smoother = "KFSmootherForRefitOutsideIn"
 
-###
+# the propagator must be the same as the one used by the Fitter
 
+###
 
 module standAloneMuons = TracksToTrajectories {
     
@@ -24,9 +25,11 @@ module standAloneMuons = TracksToTrajectories {
     PSet TrackTransformer = {
 	string Fitter = "KFFitterForRefitInsideOut"
 	string Smoother = "KFSmootherForRefitInsideOut"
+	string Propagator = "SmartPropagatorAny"
 	string TrackerRecHitBuilder = "WithTrackAngle"
 	string MuonRecHitBuilder = "MuonRecHitBuilder"
 
 	string RefitDirection = "insideOut"
+	bool RefitRPCHits = true
     }
 }
