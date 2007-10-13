@@ -25,6 +25,7 @@ es_module KFFitterForRefitOutsideIn = KFTrajectoryFitterESProducer
     string Propagator = "SmartPropagatorAnyOpposite"
     string Updator = "KFUpdator"
     string Estimator = "Chi2EstimatorForRefit"
+    int32 minHits = 3
   }
 
 es_module KFSmootherForRefitOutsideIn = KFTrajectorySmootherESProducer
@@ -36,6 +37,7 @@ es_module KFSmootherForRefitOutsideIn = KFTrajectorySmootherESProducer
     string Estimator = "Chi2EstimatorForRefit"
 
     double errorRescaling = 100.
+    int32 minHits = 3
 }
 
 ############################################################
@@ -47,6 +49,7 @@ es_module KFFitterForRefitInsideOut = KFTrajectoryFitterESProducer
     string Propagator = "SmartPropagatorAny"
     string Updator = "KFUpdator"
     string Estimator = "Chi2EstimatorForRefit"
+    int32 minHits = 3
 }
 
 es_module KFSmootherForRefitInsideOut = KFTrajectorySmootherESProducer
@@ -58,6 +61,7 @@ es_module KFSmootherForRefitInsideOut = KFTrajectorySmootherESProducer
     string Estimator = "Chi2EstimatorForRefit"
 
     double errorRescaling = 100.
+    int32 minHits = 3
 }
 
 
