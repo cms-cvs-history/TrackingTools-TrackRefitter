@@ -22,7 +22,7 @@ es_module KFFitterForRefitOutsideIn = KFTrajectoryFitterESProducer
 {
     string ComponentName = "KFFitterForRefitOutsideIn"
     
-    string Propagator = "SmartPropagatorAnyOpposite"
+    string Propagator = "SmartPropagatorAnyRK"
     string Updator = "KFUpdator"
     string Estimator = "Chi2EstimatorForRefit"
     int32 minHits = 3
@@ -32,7 +32,7 @@ es_module KFSmootherForRefitOutsideIn = KFTrajectorySmootherESProducer
   {
     string ComponentName = "KFSmootherForRefitOutsideIn"
     
-    string Propagator = "SmartPropagator"
+    string Propagator = "SmartPropagatorRK"
     string Updator = "KFUpdator"
     string Estimator = "Chi2EstimatorForRefit"
 
@@ -46,7 +46,7 @@ es_module KFFitterForRefitInsideOut = KFTrajectoryFitterESProducer
 {
     string ComponentName = "KFFitterForRefitInsideOut"
     
-    string Propagator = "SmartPropagatorAny"
+    string Propagator = "SmartPropagatorAnyRK"
     string Updator = "KFUpdator"
     string Estimator = "Chi2EstimatorForRefit"
     int32 minHits = 3
@@ -56,7 +56,7 @@ es_module KFSmootherForRefitInsideOut = KFTrajectorySmootherESProducer
 {
     string ComponentName = "KFSmootherForRefitInsideOut"
     
-    string Propagator = "SmartPropagatorAnyOpposite"
+    string Propagator = "SmartPropagatorAnyRK"
     string Updator = "KFUpdator"
     string Estimator = "Chi2EstimatorForRefit"
 

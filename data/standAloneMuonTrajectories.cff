@@ -25,7 +25,7 @@ module standAloneMuons = TracksToTrajectories {
     PSet TrackTransformer = {
 	string Fitter = "KFFitterForRefitInsideOut"
 	string Smoother = "KFSmootherForRefitInsideOut"
-	string Propagator = "SmartPropagatorAny"
+	string Propagator = "SmartPropagatorAnyRK"
 	string TrackerRecHitBuilder = "WithTrackAngle"
 	string MuonRecHitBuilder = "MuonRecHitBuilder"
 
