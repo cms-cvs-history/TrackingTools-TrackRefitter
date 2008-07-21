@@ -18,19 +18,19 @@ include "TrackingTools/TrackRefitter/data/TracksToTrajectories.cff"
 
 ###
 
-module globalMuons = TracksToTrajectories {
+module cosmicMuons = TracksToTrajectories {
     
-    InputTag Tracks = globalMuons
-
+    InputTag Tracks = cosmicMuons
+    
     PSet TrackTransformer = {
 	string Fitter = "KFFitterForRefitInsideOut"
 	string Smoother = "KFSmootherForRefitInsideOut"
 	string Propagator = "SmartPropagatorAnyRK"
 	string TrackerRecHitBuilder = "WithTrackAngle"
 	string MuonRecHitBuilder = "MuonRecHitBuilder"
-	
+
 	string RefitDirection = "insideOut"
 	bool RefitRPCHits = true
-        bool DoPredictionsOnly = false
+        bool DoPredictionsOnly = true
     }
 }

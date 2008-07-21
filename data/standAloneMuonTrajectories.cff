@@ -31,5 +31,6 @@ module standAloneMuons = TracksToTrajectories {
 
 	string RefitDirection = "insideOut"
 	bool RefitRPCHits = true
+        bool DoPredictionsOnly = false
     }
 }
