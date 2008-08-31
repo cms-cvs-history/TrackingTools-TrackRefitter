@@ -129,8 +129,12 @@ TrackTransformer::RefitDirection
 TrackTransformer::checkRecHitsOrdering(TransientTrackingRecHit::ConstRecHitContainer& recHits) const {
  
  if (!recHits.empty()){
-    double rFirst = recHits.front()->globalPosition().mag();
-    double rLast  = recHits.back()->globalPosition().mag();
+    //-- this crashes if the tracker hits have uninitialized position
+    //double rFirst = recHits.front()->globalPosition().mag();
+    //double rLast  = recHits.back()->globalPosition().mag();
+    //-- this below should be less accurate but safer
+    double rFirst = trackingGeometry()->idToDet(recHits.front()->geographicalId())->position().mag();
+    double rLast  = trackingGeometry()->idToDet(recHits.back()->geographicalId() )->position().mag();
     if(rFirst < rLast) return insideOut;
     else if(rFirst > rLast) return outsideIn;
     else{
