@@ -10,3 +10,7 @@
 <library file="TrajectoryReader.cc" name=TrajectoryReader>
   <flags EDM_PLUGIN=1> 
 </library> 
+
+<library file="TrackReader.cc" name=TrackReader>
+  <flags EDM_PLUGIN=1> 
+</library> 
